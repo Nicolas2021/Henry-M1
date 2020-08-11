@@ -29,6 +29,16 @@ var c = function(a, b, c) {
 c(8,9,10);
 console.log(b);
 console.log(x);
+/*Output 
+ 10
+ 8
+ 8
+ 9
+ 10
+ 1
+*/
+
+// end
 ```
 
 ```javascript
@@ -38,6 +48,10 @@ foo();
 function foo() { console.log('Hola!'); }
 var bar = 1;
 baz = 2;
+
+/*Output
+ Reference Error baz is not defined
+*/
 ```
 
 ```javascript
@@ -46,6 +60,10 @@ if(true) {
     var instructor = "Franco";
 }
 console.log(instructor);
+
+/*Output
+ Franco
+*/
 ```
 
 ```javascript
@@ -58,7 +76,14 @@ console.log(instructor);
    }
 })();
 console.log(instructor);
+
+/*Output
+ Tony
+ Franco
+ Franco
+*/
 ```
+
 ```javascript
 var instructor = "Tony";
 let pm = "Franco";
