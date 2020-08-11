@@ -80,7 +80,7 @@ console.log(instructor);
 /*Output
  Tony
  Franco
- Franco
+ Tony
 */
 ```
 
