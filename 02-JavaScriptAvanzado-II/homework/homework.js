@@ -6,6 +6,11 @@ function counter() {
   // ejemplo: const newCounter = counter();
   // newCounter(); // 1
   // newCounter(); // 2
+  var c = 1;
+  return function(){
+     return c++;
+     
+  };
 }
 
 function cacheFunction(cb) {
