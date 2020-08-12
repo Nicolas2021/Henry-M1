@@ -78,3 +78,17 @@ console.log(x); //1
 
 
 
+var creaFuncion = function() {
+  var arreglo =[];
+  
+  for(var i = 0; i <3; i++){
+    arreglo.push(
+      function () {
+        console.log(i);
+      }
+    )
+  }
+  return arreglo;
+}
+
+arreglo = [function() {console.log}]

@@ -90,33 +90,41 @@ let pm = "Franco";
 if (true) {
     var instructor = "The Flash";
     let pm = "Reverse Flash";
-    console.log(instructor);
-    console.log(pm);
+    console.log(instructor);// The Flash
+    console.log(pm);// Reverse Flash
 }
-console.log(instructor);
-console.log(pm);
+console.log(instructor); //The Flash
+console.log(pm);//Franco
+
+/*Output
+ The Flash
+ Reverse Flash
+ The Flash
+ Franco
+*/
+
 ```
 ### Coerción de Datos
 
 Que crees que va dar estas operaciones:
 
 ```javascript
-6 / "3" 
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3" = 2
+"2" * "3" = 6
+4 + 5 + "px" = "9px"
+"$" + 4 + 5 = "$45"
+"4" - 2 = 2
+"4px" - 2 = NaN
+7 / 0 = ∞
+{}[0] = undefined
+parseInt("09") = 9
+5 && 2 = 2
+2 && 5 = 5 
+5 || 0 = 5
+0 || 5 = 5
+[3]+[3]-[10] = 23
+3>2>1 = false
+[] == ![] = true
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -138,6 +146,25 @@ function test() {
 }
 
 test();
+
+/*Output
+   undefined
+   2
+*/
+
+/*
+Por que por el Hoisting las variables y funciones se acomodan al principio de su ámbito respectivo:
+
+   var a;
+   function foo() {
+      return 2;
+   }
+
+   console.log(a);
+   console.log(foo());
+   a = 1;
+   
+*/
 ```
 
 Y el de este:
@@ -154,6 +181,16 @@ function getFood(food) {
 }
 
 getFood(false);
+
+/*Output
+   nada
+*/
+
+/*
+Por que al no ejecutar el console.log no se muestra nada en la consola
+   
+*/
+
 ```
 
 
@@ -168,16 +205,21 @@ var obj = {
    prop: {
       fullname: 'Aurelio De Rosa',
       getFullname: function() {
-         return this.fullname;
+         return this.fullname; // Aurelio De Rosa
       }
    }
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname()); // Aurelio de Rosa
 
-var test = obj.prop.getFullname;
+var test = obj.prop.getFullname();
 
-console.log(test());
+console.log(test()); // undefined
+
+/*Output
+   Aurelio de Rosa
+   undefined
+*/
 ```
 
 ### Event loop
@@ -186,11 +228,24 @@ Considerando el siguiente código, cuál sería el orden del ouput? Por qué?
 
 ```javascript
 function printing() {
-   console.log(1);
-   setTimeout(function() { console.log(2); }, 1000);
-   setTimeout(function() { console.log(3); }, 0);
+   console.log(1);//1
+   setTimeout(function() { console.log(2); }, 1000);//2
+   setTimeout(function() { console.log(3); }, 0);//3
    console.log(4);
 }
 
 printing();
+
+/*
+Output
+   1
+   4
+   3
+   2
+*/
+
+/*El orden seria el anterior propuesto por que al ejecutarse de arriba a abajo el codigo los conmsole.log pasan primer, despues los intervalos
+el 3 sale antes que el 2 por que este tiene 1 segundo de espera para ejecutar el console.log
+
+*/
 ```
