@@ -118,10 +118,10 @@ Que crees que va dar estas operaciones:
 7 / 0 = ∞
 {}[0] = undefined
 parseInt("09") = 9
-5 && 2 = 2
-2 && 5 = 5 
-5 || 0 = 5
-0 || 5 = 5
+5 && 2 = true 2
+2 && 5 = true 5 
+5 || 0 = true 5
+0 || 5 = true 5
 [3]+[3]-[10] = 23
 3>2>1 = false
 [] == ![] = true
@@ -244,8 +244,9 @@ Output
    2
 */
 
-/*El orden seria el anterior propuesto por que al ejecutarse de arriba a abajo el codigo los conmsole.log pasan primer, despues los intervalos
-el 3 sale antes que el 2 por que este tiene 1 segundo de espera para ejecutar el console.log
-
+/*Se ejecutan los console.log primero por que se encuentran en el scope global y por ende en el stack de funciones despues de las funciones del scope global se suman en el stack y ejecutan los setTimeout por que se encuentran en el webapi.
+primero 1 y 4 por los console.log
+luego 3 por que el timeout es 0 segundos .
+Al final el 2 por que el time era de 1 segundo.
 */
 ```
