@@ -21,7 +21,7 @@ function nFibonacci(n) {
   if (n < 2) {
     return n;
   } else {
-    return (nFibonacci(n - 1) + nFibonacci(n - 2));
+    return (nFibonacci(n - 1) + nFibonacci(n - 2));// Itera hasta que n<2 ,deduce y remplaza las demas nFib(5) = nFib(3)+nFib(2)etc
   }
 
 }
@@ -32,13 +32,13 @@ function nFibonacci(n) {
 // size:   Devuelve el número de elementos que contiene la queue.
 
 function Queue() {
-  this.cola = Array.prototype.slice(0,0); 
-  this.enqueue = enqueue;
+  this.cola = Array.prototype.slice(0,0); //0 inicio 0 Fin
+  this.enqueue = enqueue; //this para tomar la var 
   this.dequeue = dequeue;
   this.size = size;
 
   function enqueue(element) {
-    this.cola.push(element);
+    this.cola.push(element);//"agrego" el metodo enqueue al prototipo de Array
   }
 
   function dequeue() {
