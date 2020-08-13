@@ -4,6 +4,12 @@ function nFactorial(n) {
   // devolvé el factorial de n (n!)
   // ej:
   // el factorial de 3 es 6 (3 * 2 * 1)
+  if (n === 0 || n === 1) {
+    return 1;
+  }else if(n < 0){
+    return 0;
+  }
+  return n * nFactorial(n - 1);
 }
 
 function nFibonacci(n) {
@@ -12,6 +18,9 @@ function nFibonacci(n) {
   // nFibonacci(0) // 0  // el elemento 0 es cero
   // nFibonacci(1) // 1 // el elemento 1 es 1
   // nFibonacci(6) // 1 // el elemento 6 es 8
+  var arr =[0][0];
+
+  return ;
 
 }
 
