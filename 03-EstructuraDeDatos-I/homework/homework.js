@@ -21,7 +21,7 @@ function nFibonacci(n) {
   if (n < 2) {
     return n;
   } else {
-    return (nFibonacci(n - 1) + nFibonacci(n - 2));// Itera hasta que n<2 ,deduce y remplaza las demas nFib(5) = nFib(3)+nFib(2)etc
+    return (nFibonacci(n - 1) + nFibonacci(n - 2));// Itera hasta que n<2 ,deduce y remplaza las demas nFib(5) = nFib(3)+nFib(2) etc.
   }
 
 }
